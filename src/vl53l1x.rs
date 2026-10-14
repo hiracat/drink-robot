@@ -136,8 +136,8 @@ struct Results {
     peak_signal_count_rate_crosstalk_corrected_mcps_sd0: u16,
 }
 
-pub struct Vl53l1x<'a, I2C, X> {
-    i2c: &'a mut I2C,
+pub struct Vl53l1x<I2C, X> {
+    i2c: I2C,
     xshut: X,
     address: u8,
     io_timeout: Option<Duration>,
@@ -151,13 +151,13 @@ pub struct Vl53l1x<'a, I2C, X> {
     last: Measurement,
 }
 
-impl<'a, I2C, X> Vl53l1x<'a, I2C, X>
+impl<I2C, X> Vl53l1x<I2C, X>
 where
     I2C: I2c,
     X: OutputPin,
 {
     /// Creates the driver. Nothing touches the bus until [`init`](Self::init).
-    pub fn new(i2c: &'a mut I2C, xshut: X) -> Self {
+    pub fn new(i2c: I2C, xshut: X) -> Self {
         Self {
             i2c,
             xshut,
