@@ -367,33 +367,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "drink-robot"
-version = "0.1.0"
-dependencies = [
- "critical-section",
- "embassy-embedded-hal",
- "embassy-executor",
- "embassy-net",
- "embassy-sync 0.8.0",
- "embassy-time",
- "embedded-hal 1.0.0",
- "embedded-hal-async",
- "embedded-io 0.7.1",
- "embedded-io-async 0.7.0",
- "esp-alloc",
- "esp-backtrace",
- "esp-bootloader-esp-idf",
- "esp-hal",
- "esp-println",
- "esp-radio",
- "esp-rtos",
- "log",
- "mpu6050-async-driver",
- "smoltcp 0.14.0",
- "static_cell",
-]
-
-[[package]]
 name = "embassy-embedded-hal"
 version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1234,9 +1207,9 @@ checksum = "1d758ba1b47b00caf47f24925c0074ecb20d6dfcffe7f6d53395c0465674841a"
 
 [[package]]
 name = "generator"
-version = "0.8.10"
+version = "0.8.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "54ade96dc9003043bce7c035c85a9df5a858bfb2039c5a2e6fdf00f324f6c551"
+checksum = "1be81b31c9ce4caf7f3178eeb90662bb1864d3ad363ec6bdada3201adff19c37"
 dependencies = [
  "cc",
  "cfg-if",
@@ -1289,6 +1262,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "25ba4bd83f9415b58b4ed8dc5714c76e626a105be4646c02630ad730ad3b5aa4"
 dependencies = [
  "hash32",
+ "serde_core",
  "stable_deref_trait",
 ]
 
@@ -1417,6 +1391,9 @@ name = "log"
 version = "0.4.34"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f9f8bd3e56ce4dfc153cf470fffbfa98c7620958b312ca5c3a4b8d5181fd13c6"
+dependencies = [
+ "serde_core",
+]
 
 [[package]]
 name = "loom"
@@ -1578,6 +1555,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "protocol"
+version = "0.1.0"
+dependencies = [
+ "heapless 0.9.3",
+ "log",
+ "serde",
+ "serde-json-core",
+]
+
+[[package]]
 name = "quote"
 version = "1.0.47"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1693,6 +1680,37 @@ dependencies = [
 ]
 
 [[package]]
+name = "robot-firmware"
+version = "0.1.0"
+dependencies = [
+ "critical-section",
+ "embassy-embedded-hal",
+ "embassy-executor",
+ "embassy-net",
+ "embassy-sync 0.8.0",
+ "embassy-time",
+ "embedded-hal 1.0.0",
+ "embedded-hal-async",
+ "embedded-io 0.7.1",
+ "embedded-io-async 0.7.0",
+ "esp-alloc",
+ "esp-backtrace",
+ "esp-bootloader-esp-idf",
+ "esp-hal",
+ "esp-println",
+ "esp-radio",
+ "esp-rtos",
+ "heapless 0.9.3",
+ "log",
+ "mpu6050-async-driver",
+ "protocol",
+ "serde",
+ "serde-json-core",
+ "smoltcp 0.14.0",
+ "static_cell",
+]
+
+[[package]]
 name = "rustversion"
 version = "1.0.23"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1736,6 +1754,17 @@ checksum = "4148590afebada386688f18773da617792bf2ef03ffc1e4cbd2b1d45b023e0ba"
 dependencies = [
  "serde_core",
  "serde_derive",
+]
+
+[[package]]
+name = "serde-json-core"
+version = "0.7.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d51e6795fbc00a1b26d78c7a0dbda143215d9dd0ee27c8a63ae0e1ccd6b83706"
+dependencies = [
+ "heapless 0.9.3",
+ "ryu",
+ "serde",
 ]
 
 [[package]]

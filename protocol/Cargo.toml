@@ -1,0 +1,10 @@
+[package]
+name = "protocol"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+heapless = { version = "0.9.3", features = ["serde"] }
+log = { version = "0.4.34", features = ["serde"] }
+serde = {version = "1.0.229", default-features = false, features = ["derive"] }
+serde-json-core = "0.7.0"
